@@ -16,7 +16,7 @@ const Signup = () => {
         axois.post("http://localhost:8000/register", { name, email, password })
             .then(result => {
                 console.log(result)
-                toast.success("Successfully signup")
+                toast.success(result.data.message)
                 navigate('/Login')
             })
             .catch(err => {
