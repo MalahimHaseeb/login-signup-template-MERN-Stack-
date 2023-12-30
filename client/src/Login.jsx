@@ -15,7 +15,7 @@ const Login = () => {
         axois.post("http://localhost:8000/login", { email, password })
             .then(result => {
                 console.log(result)
-                toast.success("Successfully login")
+                toast.success(result.data.message)
                 localStorage.setItem('myuser',JSON.stringify({token: result.data.token,email:result.data.email}))
                 navigate('/')
             })
